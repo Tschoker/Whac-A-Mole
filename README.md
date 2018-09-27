@@ -13,29 +13,33 @@ The LED aligned with the button to be pressed will light up in a random color.
 ### correct color
 A random LED will light up in the corresponding button color that is supposed to be pressed.
 ## Parts list
--1x NodeMCU
--3x Kingbright LF 59 LED RGB
--1x Resistor for LEDs (~100Ohm)
--3x push buttons with RGB heads
--3x resistors as pullup for buttons (>1kOhm anything would do)
--1x SN74LS164N shift register
--1x DIP14 socket
--wires
--PCP Lab board
+* 1x NodeMCU
+* 3x Kingbright LF 59 LED RGB
+* 1x Resistor for LEDs (~100Ohm)
+* 3x push buttons with RGB heads
+* 3x resistors as pullup for buttons (>1kOhm anything would do)
+* 1x SN74LS164N shift register
+* 1x DIP14 socket
+* wires
+* PCP Lab board
 ## Schematics
 The 3 buttons are connected with one leg to ground. Each other leg is connected with one resistor to V+ and to the NodeMCU input Pins GPIO14, 12, 13.
+
 The 2 input pins (A,B) of the shift register are connected to GPIO 0. The clock input to GPIO 2. The CLR input to V+. The output PINs and the input PINs are connected to the anodes of the LEDs (it might be that I reversed the order - Im not sure anymore). Only one blue per LED is beeing used (this model has 2 blue builtin):
-Input => LED1 red
-Output0 => LED1 green
-Output0 => LED1 blue
-Output0 => LED2 red
-Output0 => LED2 green
-Output0 => LED2 blue
-Output0 => LED3 red
-Output0 => LED3 green
-Output0 => LED3 blue
+* Input => LED1 red
+* Output0 => LED1 green
+* Output0 => LED1 blue
+* Output0 => LED2 red
+* Output0 => LED2 green
+* Output0 => LED2 blue
+* Output0 => LED3 red
+* Output0 => LED3 green
+* Output0 => LED3 blue
+
 The Catodes of all 3 LEDs are connected via a resistor to ground (this means only 1 LED should be activated at a time - if you want to activate multiple at once you should use 1 resistor for each LED).
+
 A buzzer can be connected between GPIO 15 and ground (optional - be aware: annoying).
+
 The OLED display uses I2C on its default PINs and power supply of course.
 ## Pictures
 in progress
